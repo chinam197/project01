@@ -1,0 +1,240 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+  display: none;
+}
+
+body {
+  line-height: 1;
+}
+
+menu, ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+li a {
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
+
+html {
+  font-size: 10px;
+}
+
+input button select textarea {
+  font-family: inherit;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Sofia Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 1006px;
+}
+.container .wrapper-inner {
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 60px;
+  display: grid;
+  grid-template-columns: 1.2fr repeat(4, 1fr);
+  grid-template-rows: auto repeat(4, 1fr);
+  gap: 0px 38px;
+  grid-auto-flow: row;
+  grid-template-areas: "sidebar header header header header" "sidebar main main main main" "sidebar main main main main" "sidebar main main main main" "sidebar main main main main";
+}
+.container .wrapper-inner header {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+.container .wrapper-inner header .menu {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr;
+  align-items: center;
+}
+.container .wrapper-inner header .menu .search {
+  display: flex;
+  column-gap: 18px;
+  align-items: center;
+}
+.container .wrapper-inner header .menu .search #search {
+  font-weight: 600;
+  outline: 0;
+  background-color: white;
+  border: none;
+  font-size: 1.6rem;
+}
+.container .wrapper-inner header .menu .search .icon-search {
+  cursor: pointer;
+}
+.container .wrapper-inner header .menu ul.list {
+  display: flex;
+  column-gap: 46px;
+}
+.container .wrapper-inner header .menu ul.list li .active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #000;
+}
+.container .wrapper-inner header .menu ul.list li a {
+  position: relative;
+  padding: 8px 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #000;
+  transition: before after width 0.5s;
+}
+.container .wrapper-inner header .menu ul.list li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #000;
+  transition: width 0.5s;
+}
+.container .wrapper-inner header .menu ul.list li a:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #000;
+}
+.container .wrapper-inner header .menu .action {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-direction: row;
+  column-gap: 20px;
+}
+.container .wrapper-inner .header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  height: 128px;
+}
+.container .wrapper-inner .main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: dense;
+  grid-auto-rows: 188px;
+  gap: 22px;
+}
+.container .wrapper-inner .main .tall {
+  grid-row: span 2;
+}
+.container .wrapper-inner .main .wide {
+  grid-column: span 2;
+}
+.container .wrapper-inner .main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.container .wrapper-inner .sidebar {
+  position: relative;
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  padding: 54px 0 0 50px;
+}
+.container .wrapper-inner .sidebar .title {
+  font-family: Sofia Sans;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 32px;
+  margin: 60px 0px 0px;
+}
+.container .wrapper-inner .sidebar .home img {
+  height: 46.09px;
+  width: 97.42px;
+}
+.container .wrapper-inner .sidebar .product {
+  display: flex;
+  flex-direction: column;
+  font-family: Sofia Sans;
+  gap: 18px normal;
+  line-height: 16px;
+  margin: 48px 0px 0px;
+}
+.container .wrapper-inner .sidebar .product li {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  transition: 0.2s linear background-color;
+}
+.container .wrapper-inner .sidebar .product li:hover {
+  background: rgba(128, 128, 128, 0.141);
+}
+.container .wrapper-inner .sidebar .product li a {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.container .wrapper-inner .sidebar .ms-help {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  bottom: 30px;
+  left: 200px;
+}
+
+/*# sourceMappingURL=style.css.map */
